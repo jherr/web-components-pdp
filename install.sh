@@ -1,2 +1,2 @@
-(cd components/buy-tools && yarn) && (cd components/footer && yarn) && (cd components/header && yarn)
-(cd components/buy-tools && yarn build) && (cd components/footer && yarn build) && (cd components/header && yarn build)
+(cd components/buy-tools-dumb && yarn) && (cd components/footer && yarn) && (cd components/header-dumb && yarn)
+(cd components/buy-tools-smart && yarn) && (cd components/header-smart && yarn)

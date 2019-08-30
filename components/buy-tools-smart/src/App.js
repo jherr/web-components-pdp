@@ -18,7 +18,7 @@ const styles = `
 }
 `;
 
-function App({ onAddToCart, onSelectDog }) {
+function App() {
   return (
     <div>
       <style dangerouslySetInnerHTML={{__html: styles}}>
@@ -31,7 +31,7 @@ function App({ onAddToCart, onSelectDog }) {
           <button
             className="btn"
             onClick={() => {
-              onSelectDog('Dog 1', 'https://images.dog.ceo/breeds/puggle/IMG_071023.jpg');
+              window.pdp.product.setProduct('Dog 1', 'https://images.dog.ceo/breeds/puggle/IMG_071023.jpg');
             }}
           >
             Dog 1
@@ -41,7 +41,7 @@ function App({ onAddToCart, onSelectDog }) {
           <button
             className="btn"
             onClick={() => {
-              onSelectDog('Dog 2', 'https://images.dog.ceo/breeds/basenji/n02110806_1826.jpg');
+              window.pdp.product.setProduct('Dog 2', 'https://images.dog.ceo/breeds/basenji/n02110806_1826.jpg');
             }}
           >
             Dog 2
@@ -54,7 +54,7 @@ function App({ onAddToCart, onSelectDog }) {
         <div>
           <button
             className="btn"
-            onClick={() => {onAddToCart()}}
+            onClick={() => {window.pdp.cart.addToCart()}}
           >
             Adopt It!
           </button>
