@@ -9,6 +9,7 @@ Build the Vue and React Micro Frontend Web Components.
 
 ```
 ./install.sh
+./build.sh
 ```
 
 # Run the site
