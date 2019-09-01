@@ -14,9 +14,7 @@ export default class BuyTools extends HTMLElement {
 
   render() {
     ReactDOM.render(
-      <App
-        parentElement={this}
-      />,
+      <App />,
       this.root
     );
   }

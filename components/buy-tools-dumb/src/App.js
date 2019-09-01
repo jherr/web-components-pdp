@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const styles = `
 .buy-tools {
@@ -18,9 +18,10 @@ const styles = `
 }
 `;
 
-function App({ parentElement }) {
+function App() {
+  const rootElement = useRef();
   return (
-    <div>
+    <div ref={rootElement}>
       <style dangerouslySetInnerHTML={{__html: styles}}>
       </style>
       <div className="container">
@@ -31,11 +32,14 @@ function App({ parentElement }) {
           <button
             className="btn"
             onClick={() => {
-              parentElement.dispatchEvent(new CustomEvent('selectDog', {
+              rootElement.current.dispatchEvent(new CustomEvent('selectDog', {
                 detail: {
                   description: 'Dog 1',
                   img: 'https://images.dog.ceo/breeds/puggle/IMG_071023.jpg',
                 },
+                bubbles: true,
+                cancelable: true,
+                composed: true,
               }));
             }}
           >
@@ -46,11 +50,14 @@ function App({ parentElement }) {
           <button
             className="btn"
             onClick={() => {
-              parentElement.dispatchEvent(new CustomEvent('selectDog', {
+              rootElement.current.dispatchEvent(new CustomEvent('selectDog', {
                 detail: {
                   description: 'Dog 2',
                   img: 'https://images.dog.ceo/breeds/basenji/n02110806_1826.jpg',
                 },
+                bubbles: true,
+                cancelable: true,
+                composed: true,
               }));
             }}
           >
@@ -65,7 +72,11 @@ function App({ parentElement }) {
           <button
             className="btn"
             onClick={() => {
-              parentElement.dispatchEvent(new Event('addToCart'));
+              rootElement.current.dispatchEvent(new CustomEvent('addToCart', {
+                bubbles: true,
+                cancelable: true,
+                composed: true,            
+              }));
             }}
           >
             Adopt It!
