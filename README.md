@@ -18,4 +18,4 @@ Build the Vue and React Micro Frontend Web Components.
 python -m SimpleHTTPServer 8000
 ```
 
-Then navigate to http://localhost:8000/evented/ or http://localhost:8000/mvc/
+Then navigate to http://localhost:8000/host-simple/ or http://localhost:8000/host-mvc/
